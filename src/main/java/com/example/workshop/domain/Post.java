@@ -5,6 +5,8 @@ import javax.xml.crypto.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.example.workshop.dto.AuthorDTO;
+
 @Document
 public class Post {
     @Id
@@ -12,11 +14,11 @@ public class Post {
     private Data date;
     private String title;
     private String body;
-    private User author;
+    private AuthorDTO author;
 
     public Post(){}
 
-    public Post(String id, Data date, String title, String body, User author) {
+    public Post(String id, Data date, String title, String body, AuthorDTO author) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -56,11 +58,11 @@ public class Post {
         this.body = body;
     }
 
-    public User getAuthor() {
+    public AuthorDTO getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(AuthorDTO author) {
         this.author = author;
     }
 
